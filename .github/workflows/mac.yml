@@ -71,6 +71,10 @@ jobs:
 
           sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
+      - name: Install clang 16
+        run: |
+          brew install llvm@16
+
       - name: ThirdParty cache.
         id: cache-third-party
         uses: actions/cache@v3.0.11
