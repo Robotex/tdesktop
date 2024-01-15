@@ -96,6 +96,14 @@ jobs:
           cd Libraries
           find . -iname "*.dir" -exec rm -rf {} || true \;
 
+      - name: Apply patches.
+        run: |
+          cd $REPO_NAME
+          patch --forward --strip=1 -i "../patches/0001-Disable-sponsored-messages.patch"
+          patch --forward --strip=1 -i "../patches/0002-Disable-saving-restrictions.patch"
+          patch --forward --strip=1 -i "../patches/0003-Disable-invite-peeking-restrictions.patch"
+          patch --forward --strip=1 -i "../patches/0004-Disable-accounts-limit.patch" 
+
       - name: Telegram Desktop build.
         if: env.ONLY_CACHE == 'false'
         run: |
