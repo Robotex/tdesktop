@@ -114,7 +114,9 @@ jobs:
           -D CMAKE_C_FLAGS="-Werror" \
           -D CMAKE_CXX_FLAGS="-Werror" \
           -D CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED=NO \
-          -D TDESKTOP_API_TEST=ON \
+          -D CMAKE_BUILD_TYPE=Release \
+          -D TDESKTOP_API_ID=611335 \
+          -D TDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c \
           -D DESKTOP_APP_DISABLE_AUTOUPDATE=OFF \
           -D DESKTOP_APP_DISABLE_CRASH_REPORTS=OFF \
           $DEFINE
